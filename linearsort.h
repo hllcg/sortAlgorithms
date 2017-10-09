@@ -2,11 +2,11 @@
 #include <iostream>
 #include <vector>
 
-class LinearSearch
+class LinearSort
 {
 public:
-LinearSearch(std::vector<unsigned char> vec);
-~LinearSearch();
+LinearSort(std::vector<unsigned char> vec);
+~LinearSort();
 private:
   std::vector<unsigned char> vec_;
 };
