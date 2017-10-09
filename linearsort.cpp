@@ -3,6 +3,7 @@ using namespace std;
 LinearSort::LinearSort(std::vector<unsigned char> vec) : vec_(vec)
 {
   sort();
+  cout<<"sort bitti"<<endl;
 }
 
 LinearSort::~LinearSort()
@@ -17,9 +18,7 @@ void LinearSort::sort()
     {
       if(vec_[i] > vec_[j])
       {
-	auto tmp = vec_[i];
-	vec_[i] = vec_[j];
-	vec_[j] = tmp;
+	std::swap<unsigned char>(vec_[i],vec_[j]);
       }
     }
   }
