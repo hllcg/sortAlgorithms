@@ -4,15 +4,15 @@
 #include <vector>
 #include "data.h"
 template<class T>
-class LinearSort
+class BubleSort
 {
 public:
-  LinearSort(Data<T> data) : data_(data)
+  BubleSort(Data<T> data) : data_(data)
 {
   sort();
 }
-~LinearSort(){}
-friend std::ostream& operator<<(std::ostream &os,LinearSort &sort)
+~BubleSort(){}
+friend std::ostream& operator<<(std::ostream &os,BubleSort &sort)
 {
   for(unsigned int i=0;i<sort.data_.size();i++)
     (i%8 || i==0) ?
@@ -27,11 +27,11 @@ private:
   {
   for(unsigned int i=0;i<data_.size();i++)
   {
-    for(unsigned int j=i;j<data_.size();j++)
+    for(unsigned int j=0;j<data_.size()-1;j++)
     {
-      if(data_[i] > data_[j])
+      if(data_[j] > data_[j+1])
       {
-	std::swap<T>(data_[i],data_[j]);
+	std::swap<T>(data_[j],data_[j+1]);
       }
     }
   }

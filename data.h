@@ -23,10 +23,10 @@ public:
   ~Data(){}
   void randomSet(unsigned int len)
   {
-  srand(time(nullptr));
-  for(unsigned int i = len;i>0;i--)
-    vec_.push_back(rand());
-}
+    srand(time(nullptr));
+    for(unsigned int i = len;i>0;i--)
+      vec_.push_back(rand());
+  }
   void swap(unsigned int indexA,unsigned int indexB)
   {
     if(indexA >= this->vec_.size() || indexB >= this->vec_.size())
