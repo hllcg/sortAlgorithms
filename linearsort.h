@@ -9,4 +9,5 @@ LinearSort(std::vector<unsigned char> vec);
 ~LinearSort();
 private:
   std::vector<unsigned char> vec_;
+void sort();
 };
