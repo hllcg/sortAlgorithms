@@ -1,6 +1,6 @@
 #include "linearsort.h"
-
-LinearSort::LinearSort()
+using namespace std;
+LinearSort::LinearSort(std::vector<unsigned char> vec) : vec_(vec)
 {
 
 }
