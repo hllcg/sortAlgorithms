@@ -2,22 +2,38 @@
 #include <iostream>
 #include <iomanip>
 #include <vector>
-
+#include "data.h"
+template<class T>
 class LinearSort
 {
 public:
-LinearSort(std::vector<unsigned char> vec);
-~LinearSort();
+  LinearSort(Data<T> data) : data_(data)
+{
+  sort();
+}
+~LinearSort(){}
 friend std::ostream& operator<<(std::ostream &os,LinearSort &sort)
 {
-  for(unsigned int i=0;i<sort.vec_.size();i++)
+  for(unsigned int i=0;i<sort.data_.size();i++)
     (i%16 || i==0) ?
-    os<<std::setfill('0')<<std::setw(2) <<std::hex <<(((int)sort.vec_[i])&0xFF)<<" " :
-    os<<std::endl<<std::setfill('0')<<std::setw(2) <<std::hex <<(((int)sort.vec_[i])&0xFF)<<" " ;
+    os<<std::setfill('0')<<std::setw(2) <<std::hex <<(((int)sort.data_[i])&0xFF)<<" " :
+    os<<std::endl<<std::setfill('0')<<std::setw(2) <<std::hex <<(((int)sort.data_[i])&0xFF)<<" " ;
   os<<std::endl;
   return os;
 }
 private:
-  std::vector<unsigned char> vec_;
-void sort();
+ Data<T> data_;
+  void sort()
+  {
+  for(unsigned int i=0;i<data_.size();i++)
+  {
+    for(unsigned int j=i;j<data_.size();j++)
+    {
+      if(data_[i] > data_[j])
+      {
+	std::swap<unsigned char>(data_[i],data_[j]);
+      }
+    }
+  }
+}
 };
