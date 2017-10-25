@@ -25,9 +25,9 @@ private:
  Data<T> data_;
   void sort()
   {
-  for(unsigned int i=data_.size();i>0;i--)
+  for(unsigned int i=0;i<data_.size();i++)
   {
-    for(unsigned int j=0;j<i-1;j++)
+    for(unsigned int j=0;j<data_.size()-1;j++)
     {
       if(data_[j] > data_[j+1])
       {
